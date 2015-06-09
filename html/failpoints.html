@@ -1,0 +1,18 @@
+  <div id="fp">
+    <table class="table table-striped table-condensed table-bordered" ng-repeat="f in failpoints">
+      <tr>
+	<th>Name</th>
+	<th>Enabled</th>
+	<th>Probability</th>
+	<th>Error Message</th>
+      </tr>
+      <tr>
+	<caption>{{selected_node.Name}}</caption>
+	<td>{{f.Name}}</td>
+	<td><input type="checkbox" ng-change="upload_failpoint(f.Name)" ng-model="f.Enabled"></input></td>
+	<td><input type="number" min="1" max="100" ng-change="upload_failpoint(f.Name)" 
+	    ng-model="f.Probability"></input></td>
+	<td><input type="string" ng-change="upload_failpoint(f.Name)" ng-model="f.Err"></input></td>
+      </tr>
+    </table>
+  </div>

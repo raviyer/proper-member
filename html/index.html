@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cluster" ng-strict-di>
+  <head>
+    <title>Proper Member</title>
+
+    <!-- Cytoscape -->
+    <script src="scripts/cytoscape.min.js"></script>
+    <!-- Angular JS -->
+    <script src="scripts/angular.min.js"></script>
+    <!-- Lavish bootstrap -->
+    <meta charset="utf-8"></meta>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="main.css"></link> 
+
+
+    <!-- Our App -->
+
+    <style>
+      #nw {
+      height: 480px;
+      }
+      .widget {
+      border-top-style: ridge;
+      border: 1px solid;
+      border-top-width: 10px;
+      border-bottom-width: 4px;
+      padding: 10px;
+      position: relative;
+      }
+      body {
+      padding: 10px;
+      padding-top: 60px;
+      }
+    </style>
+    <script src="scripts/cluster.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/network.js"></script>
+    <!-- <script src="scripts/failpoint.js"></script> -->
+  </head>
+
+  <body>
+    <navbar></navbar>
+    <div ng-controller="networkController" class="container-fluid">
+      <div class="row">
+	<network class="widget col-md-12"></network>
+      </div>
+      <div class="row">
+	<failpoint-list dragable class="col-md-6 widget" ng-show="selected_node !== null" ></failpoint-list>
+	<join-form class="widget col-md-6" ng-show="selected_node !== null"></join-form>
+      </div>
+    </div>
+    <hr>
+      <address><a href="mailto:ravi.iyer@isilon.com">Ravikant Iyer</a></address>
+      <!-- Created: Sat May 30 17:26:22 PDT 2015 -->
+      <!-- hhmts start -->
+Last modified: Mon Jun  8 14:39:44 PDT 2015
+<!-- hhmts end -->
+  </body>
+</html>
